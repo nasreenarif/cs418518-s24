@@ -1,1 +1,1 @@
-git@github.com:manoharvellala/mvell001-webProgramming.git
+https://github.com/manoharvellala/mvell001-webProgramming.git

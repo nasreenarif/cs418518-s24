@@ -3,7 +3,8 @@
 import { useState } from "react";
 
 export default function SignUp() {
-  const [fullName, setFullName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,8 +13,8 @@ export default function SignUp() {
   };
 
   const onSubmit = () => {
-    alert(fullName);
-  }
+    alert(firstName + " " + lastName);
+  };
 
   return (
     <main className="flex">
@@ -21,24 +22,46 @@ export default function SignUp() {
         <form className="space-y-6">
           <div>
             <label
-              htmlFor="fullname"
+              htmlFor="firstname"
               className="block text-sm font-medium leading-6 text-gray-900"
             >
-              Full Name
+              First Name
             </label>
             <div className="mt-2">
               <input
-                id="fullname"
-                name="fullname"
+                id="firstname"
+                name="firstname"
                 type="text"
                 required
                 onChange={(e) => {
-                  setFullName(e.target.value);
+                  setFirstName(e.target.value);
                 }}
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
             </div>
           </div>
+
+          <div>
+            <label
+              htmlFor="lastname"
+              className="block text-sm font-medium leading-6 text-gray-900"
+            >
+              Last Name
+            </label>
+            <div className="mt-2">
+              <input
+                id="lastname"
+                name="lastname"
+                type="text"
+                required
+                onChange={(e) => {
+                  setLastName(e.target.value);
+                }}
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
           <div>
             <label
               htmlFor="email"
@@ -85,7 +108,7 @@ export default function SignUp() {
           <div>
             <button
               className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            onClick={onSubmit}
+              onClick={onSubmit}
             >
               Sign Up
             </button>

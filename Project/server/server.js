@@ -1,6 +1,7 @@
 const express=require("express");
 const app=express();
 const port=8080;
+const bodyparser=require("body-parser");
 
 const myLogger = function (req, res, next) {
     console.log('LOGGED')
@@ -8,9 +9,10 @@ const myLogger = function (req, res, next) {
   }
 
  app.use(myLogger); 
-
+app.use(bodyparser.json());
 //  localhost:8080/user
  app.use('/user',require('./routes/user'));
+ app.use('/login',require('./routes/login'));
 
 
 

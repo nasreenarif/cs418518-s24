@@ -35,7 +35,10 @@ router.post("/", (req, res) => {
         if (result.affectedRows == 0) {
           res.status(500).send("Record not inserted");
         } else {
-          res.status(200).send("Record inserted successfully");
+          res.status(200).send({
+            status:200,
+            message:"User successfully created! An email from an administrator will be sent to you shortly."
+          });
         }
       }
     );
